@@ -13,5 +13,5 @@ untuk fitur mekanika pergerakan saya memilih fitur double jump karena implemtasi
 		double_jump = true
 ```
 berikut kodenya 
-intinya kalau player lagi di udara atau not touching floor maka bisa jump sekali
-saya membuat variabel double_jump agar player tidak bisa spam double jump infinitely
+intinya kalau player lagi di udara atau not touching floor maka bisa jump sekali.
+saya membuat variabel double_jump agar player tidak bisa spam double jump infinitely.
