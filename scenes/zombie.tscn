@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://kqwtra5nwues"]
+
+[ext_resource type="Texture2D" uid="uid://dkt7pireaiqgd" path="res://assets/kenney_platformercharacters/Vector/zombie_vector.svg" id="1_1vlb3"]
+[ext_resource type="Script" uid="uid://dlnydlnekqtqt" path="res://scenes/zombie.gd" id="1_httt1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_httt1"]
+size = Vector2(67, 95)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xepks"]
+atlas = ExtResource("1_1vlb3")
+region = Rect2(0, 0, 80, 110)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ftooa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xepks")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Zombie" type="CharacterBody2D" unique_id=407273787]
+script = ExtResource("1_httt1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=115375161]
+position = Vector2(-2.5, 6.5)
+shape = SubResource("RectangleShape2D_httt1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=862485399]
+sprite_frames = SubResource("SpriteFrames_ftooa")

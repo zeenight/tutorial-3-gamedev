@@ -2,11 +2,52 @@
 
 [ext_resource type="PackedScene" uid="uid://ds60n6krsavle" path="res://scenes/Ground.tscn" id="1_elqb8"]
 [ext_resource type="PackedScene" uid="uid://3sayjvukgrof" path="res://scenes/player.tscn" id="2_rvslj"]
+[ext_resource type="PackedScene" uid="uid://kqwtra5nwues" path="res://scenes/zombie.tscn" id="3_0bbpv"]
 
 [node name="Root" type="Node2D" unique_id=918599496]
+position = Vector2(-46, -33)
 
 [node name="Ground" parent="." unique_id=673580990 instance=ExtResource("1_elqb8")]
 position = Vector2(296, 324)
+
+[node name="Ground" parent="Ground" unique_id=641053823 instance=ExtResource("1_elqb8")]
+position = Vector2(-352, -57)
+
+[node name="Ground" parent="Ground/Ground" unique_id=628280341 instance=ExtResource("1_elqb8")]
+position = Vector2(-1, -74)
+
+[node name="Ground" parent="Ground/Ground/Ground" unique_id=1141848495 instance=ExtResource("1_elqb8")]
+position = Vector2(-1, -74)
+
+[node name="Ground" parent="Ground/Ground/Ground/Ground" unique_id=863494651 instance=ExtResource("1_elqb8")]
+position = Vector2(-1, -74)
+
+[node name="Ground" parent="Ground/Ground/Ground/Ground/Ground" unique_id=1548134309 instance=ExtResource("1_elqb8")]
+position = Vector2(1436, 193)
+
+[node name="Ground" parent="Ground/Ground/Ground/Ground/Ground/Ground" unique_id=1005465031 instance=ExtResource("1_elqb8")]
+position = Vector2(4, 79)
+
+[node name="Ground" parent="Ground/Ground/Ground/Ground/Ground/Ground/Ground" unique_id=54798179 instance=ExtResource("1_elqb8")]
+position = Vector2(4, 79)
+
+[node name="Ground" parent="Ground/Ground/Ground/Ground/Ground/Ground/Ground/Ground" unique_id=1862443808 instance=ExtResource("1_elqb8")]
+position = Vector2(4, 79)
+
+[node name="Ground" parent="Ground/Ground/Ground/Ground/Ground/Ground/Ground/Ground/Ground" unique_id=1403078593 instance=ExtResource("1_elqb8")]
+position = Vector2(4, 79)
+
+[node name="Ground" parent="Ground/Ground/Ground/Ground/Ground/Ground/Ground/Ground/Ground/Ground" unique_id=1596245662 instance=ExtResource("1_elqb8")]
+position = Vector2(-315, 88)
+
+[node name="Ground" parent="Ground/Ground/Ground/Ground/Ground/Ground/Ground/Ground/Ground/Ground/Ground" unique_id=570925654 instance=ExtResource("1_elqb8")]
+position = Vector2(-351, 27)
+
+[node name="Ground" parent="Ground/Ground/Ground/Ground/Ground/Ground/Ground/Ground/Ground/Ground/Ground/Ground" unique_id=873050607 instance=ExtResource("1_elqb8")]
+position = Vector2(-364, 6)
+
+[node name="Ground" parent="Ground/Ground/Ground/Ground/Ground/Ground/Ground/Ground/Ground/Ground/Ground/Ground/Ground" unique_id=974822224 instance=ExtResource("1_elqb8")]
+position = Vector2(-358, 0)
 
 [node name="Ground2" parent="." unique_id=1551337937 instance=ExtResource("1_elqb8")]
 position = Vector2(856, 324)
@@ -15,3 +56,7 @@ position = Vector2(856, 324)
 position = Vector2(576, 394)
 
 [node name="Player" parent="." unique_id=920699701 instance=ExtResource("2_rvslj")]
+position = Vector2(167, 240)
+
+[node name="Zombie" parent="." unique_id=407273787 instance=ExtResource("3_0bbpv")]
+position = Vector2(428, 222)
