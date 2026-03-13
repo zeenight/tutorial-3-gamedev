@@ -23,3 +23,13 @@ saya membuat variabel double_jump agar player tidak bisa spam double jump infini
 Tutorial 5
 
 https://pixabay.com/music/search/pixel%20game/ untuk lagu ost backround
+Jika pemain terkena zombie, maka permainan akan berakhir.
+
+list yang diadd:
+
+movement player
+jump system improvised
+zombie AI
+animation improvised
+game over
+sound/music
