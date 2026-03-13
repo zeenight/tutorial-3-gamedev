@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://dsyfep1odrxje"]
 
 [ext_resource type="PackedScene" uid="uid://ds60n6krsavle" path="res://scenes/Ground.tscn" id="1_elqb8"]
+[ext_resource type="Script" uid="uid://7fghr08y78fb" path="res://scenes/main.gd" id="1_vcsgt"]
 [ext_resource type="PackedScene" uid="uid://3sayjvukgrof" path="res://scenes/player.tscn" id="2_rvslj"]
 [ext_resource type="PackedScene" uid="uid://kqwtra5nwues" path="res://scenes/zombie.tscn" id="3_0bbpv"]
+[ext_resource type="AudioStream" uid="uid://d242cqha3ofbb" path="res://assets/kissan4-pixel-paradise-358340.wav" id="4_rarhs"]
 
 [node name="Root" type="Node2D" unique_id=918599496]
 position = Vector2(-46, -33)
+script = ExtResource("1_vcsgt")
 
 [node name="Ground" parent="." unique_id=673580990 instance=ExtResource("1_elqb8")]
 position = Vector2(296, 324)
@@ -60,3 +63,7 @@ position = Vector2(167, 240)
 
 [node name="Zombie" parent="." unique_id=407273787 instance=ExtResource("3_0bbpv")]
 position = Vector2(428, 222)
+
+[node name="bgm" type="AudioStreamPlayer" parent="." unique_id=790921778]
+stream = ExtResource("4_rarhs")
+volume_db = -14.767

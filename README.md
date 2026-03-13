@@ -15,3 +15,11 @@ untuk fitur mekanika pergerakan saya memilih fitur double jump karena implemtasi
 berikut kodenya 
 intinya kalau player lagi di udara atau not touching floor maka bisa jump sekali.
 saya membuat variabel double_jump agar player tidak bisa spam double jump infinitely.
+
+
+=======================
+
+
+Tutorial 5
+
+https://pixabay.com/music/search/pixel%20game/ untuk lagu ost backround

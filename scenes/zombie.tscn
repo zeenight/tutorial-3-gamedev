@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dkt7pireaiqgd" path="res://assets/kenney_platformercharacters/Vector/zombie_vector.svg" id="1_1vlb3"]
 [ext_resource type="Script" uid="uid://dlnydlnekqtqt" path="res://scenes/zombie.gd" id="1_httt1"]
+[ext_resource type="Texture2D" uid="uid://d2w5s67qoymf2" path="res://assets/kenney_platformercharacters/PNG/Zombie/zombie_tilesheet.png" id="3_4gx57"]
+[ext_resource type="AudioStream" uid="uid://dmnttew7816bj" path="res://assets/takeDamage-40114.wav" id="3_xepks"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_httt1"]
 size = Vector2(67, 95)
@@ -10,6 +12,26 @@ size = Vector2(67, 95)
 atlas = ExtResource("1_1vlb3")
 region = Rect2(0, 0, 80, 110)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycv6i"]
+atlas = ExtResource("3_4gx57")
+region = Rect2(80, 0, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjjxt"]
+atlas = ExtResource("3_4gx57")
+region = Rect2(640, 0, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pfmu"]
+atlas = ExtResource("3_4gx57")
+region = Rect2(560, 110, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fthk"]
+atlas = ExtResource("3_4gx57")
+region = Rect2(0, 110, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aetfh"]
+atlas = ExtResource("3_4gx57")
+region = Rect2(80, 110, 80, 110)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ftooa"]
 animations = [{
 "frames": [{
@@ -17,9 +39,37 @@ animations = [{
 "texture": SubResource("AtlasTexture_xepks")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycv6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjjxt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7pfmu")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fthk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aetfh")
+}],
+"loop": true,
+"name": &"walk",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xepks"]
+size = Vector2(73, 100)
 
 [node name="Zombie" type="CharacterBody2D" unique_id=407273787]
 script = ExtResource("1_httt1")
@@ -30,3 +80,16 @@ shape = SubResource("RectangleShape2D_httt1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=862485399]
 sprite_frames = SubResource("SpriteFrames_ftooa")
+animation = &"walk"
+frame_progress = 0.83464926
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1138559635]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1760864910]
+position = Vector2(-2.5, 5)
+shape = SubResource("RectangleShape2D_xepks")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1691911583]
+stream = ExtResource("3_xepks")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
